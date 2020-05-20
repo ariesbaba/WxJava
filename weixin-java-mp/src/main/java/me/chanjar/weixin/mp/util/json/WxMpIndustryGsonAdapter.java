@@ -29,9 +29,9 @@ public class WxMpIndustryGsonAdapter implements JsonSerializer<WxMpTemplateIndus
 
   private WxMpTemplateIndustryEnum convertFromJson(JsonObject json) {
     String secondClass = GsonHelper.getString(json, "second_class");
-    if (secondClass.contains("|")) {
-      secondClass = secondClass.split("\\|")[1];
-    }
+//    if (secondClass.contains("|")) {
+//      secondClass = secondClass.split("\\|")[1];
+//    }
 
     return WxMpTemplateIndustryEnum.findBySecondary(secondClass);
   }
