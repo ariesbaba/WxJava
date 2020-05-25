@@ -198,7 +198,23 @@ public enum WxMpTemplateIndustryEnum {
    */
   public static WxMpTemplateIndustryEnum findBySecondary(String industry) {
     for (WxMpTemplateIndustryEnum industryEnum : WxMpTemplateIndustryEnum.values()) {
-      if (industryEnum.secondClass.contains(industry)) {
+      if (industryEnum.secondClass.equals(industry)) {
+        return industryEnum;
+      }
+    }
+
+    return null;
+  }
+
+  /**
+   * 根据firstClss和secondClass匹配返回枚举
+   * @param firstClass
+   * @param secondClass
+   * @return
+   */
+  public static WxMpTemplateIndustryEnum findByFirstAndSecondary(String firstClass,String secondClass){
+    for (WxMpTemplateIndustryEnum industryEnum : WxMpTemplateIndustryEnum.values()) {
+      if (industryEnum.firstClass.equals(firstClass) && industryEnum.secondClass.contains(secondClass)) {
         return industryEnum;
       }
     }
